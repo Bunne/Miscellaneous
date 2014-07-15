@@ -84,7 +84,7 @@ class KF_Map():
                         name = os.path.basename(item)   # Get individual filename only
                         ext = os.path.splitext(name)[1] # Get extension
                         source = kfzip.open(item)
-                        print(item)
+
                         # MOVE FILES BASED ON EXTENSION
                         # Maps - rom
                         if ext == '.rom':
