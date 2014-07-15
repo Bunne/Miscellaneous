@@ -84,38 +84,41 @@ class KF_Map():
                         name = os.path.basename(item)   # Get individual filename only
                         ext = os.path.splitext(name)[1] # Get extension
                         source = kfzip.open(item)
-
+                        print(item)
                         # MOVE FILES BASED ON EXTENSION
                         # Maps - rom
                         if ext == '.rom':
                             target = open(os.path.join(CONFIG.get_config("GD_Maps"), name),'wb')
                             shutil.copyfileobj(source,target)
                         # Music - ogg
-                        if ext == '.ogg':
+                        elif ext == '.ogg':
                             target = open(os.path.join(CONFIG.get_config("GD_Music"), name),'wb')
                             shutil.copyfileobj(source,target)
                         # Sound - uax
-                        if ext == '.uax':
+                        elif ext == '.uax':
                             target = open(os.path.join(CONFIG.get_config("GD_Sounds"), name),'wb')
                             shutil.copyfileobj(source,target)
                         # Textures - utx
-                        if ext == '.utx':
+                        elif ext == '.utx':
                             target = open(os.path.join(CONFIG.get_config("GD_Textures"), name),'wb')
                             shutil.copyfileobj(source,target)
                         # Meshes - usx
-                        if ext == '.usx':
+                        elif ext == '.usx':
                             target = open(os.path.join(CONFIG.get_config("GD_Meshes"), name),'wb')
                             shutil.copyfileobj(source,target)
                         # Animation - ukx
-                        if ext == '.ukx':
+                        elif ext == '.ukx':
                             target = open(os.path.join(CONFIG.get_config("GD_Animations"), name),'wb')
                             shutil.copyfileobj(source,target)
                         # System - u , ucl, upl, int, dll, fxc
-                        if ext in ['.u', '.ucl', '.upl', '.int', '.dll', '.DLL', '.fxc']:
+                        elif ext in ['.u', '.ucl', '.upl', '.int', '.dll', '.DLL', '.fxc']:
                             target = open(os.path.join(CONFIG.get_config("GD_System"), name),'wb')
                             shutil.copyfileobj(source,target)
-                        source.close()
-                        target.close()
+                        try:
+                            source.close()
+                            target.close()
+                        except Exception as e:
+                            pass  # Is a non-necessary file
         os.remove(self.info['name'])
 
         os.chdir(CONFIG.get_config("OD"))
