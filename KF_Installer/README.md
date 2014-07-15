@@ -4,6 +4,10 @@ A rewrite of my original KF command-line tool.
 
 Requires Python 3.
 
+Configuration
+-------------
+Little additional configuration should be necessary to run the script. However, you may need to adjust the path in the config file to point to your own Killing Floor installation. Just make sure that it points to the root Killing Floor directory containing all the Map, Texture (etc.) folders. OS X users may use '%s' in place of their username, the installer will fill it in.
+
 Use
 ---
 View what maps you have installed, maps not installed, and maps available for download.
