@@ -10,17 +10,33 @@ Little additional configuration should be necessary to run the script. However, 
 
 Use
 ---
-View what maps you have installed, maps not installed, and maps available for download.
+#### Listing Maps
+View what maps you have installed (mine), maps not installed (diff), and maps available for download (online).
     
     KF.py view <mine | online | diff>
     
-Get info on maps and view them online.
+#### Viewing Map Info
+Get info on maps and view them online. The given name does not need to be a complete match.
     
-    KF.py info <map name>
+    KF.py info <name>
+
+**Example:**
+
+    $ KF.py info Containment
+    Name: KF-ContainmentStation
+    Author: Fel
+    Link: http://sykosis.co.uk/kfmwhitelist/1433/kf-containmentstation
+    Info: KF-ContainmentStation - 4195 downloads - 15.58 MB zip
     
-Install maps quickly for immediate use in-game.
+#### Installing Maps
+Install maps quickly for immediate use in-game. The name must be a complete match, with or without the preceeding 'KF-'.
     
-    KF.py install <map name>
+    KF.py install <name>
+
+**Example:**
+
+    $ KF.py install ContainmentStation
+    Installing KF-ContainmentStation
 
 Disclaimer
 ----------
